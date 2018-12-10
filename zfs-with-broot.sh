@@ -49,13 +49,13 @@ zpool create -o ashift=12 -d \
       -o feature@spacemap_histogram=enabled \
       -o feature@userobj_accounting=enabled \
       -O atime=off -O canmount=off -O compression=lz4 -O devices=off \
-      -O normalization=formD -O xattr=sa -O mountpoint=/ -R /mnt \
+      -O normalization=formD -O xattr=sa -O mountpoint=/ -R /mnt -f \
       bpool /dev/disk/by-id/${DRIVE_ID}-part4
 
 # 2.4 Create the root pool: (unencrypted)
 zpool create -o ashift=12 \
       -O atime=off -O canmount=off -O compression=lz4 -O normalization=formD \
-      -O xattr=sa -O mountpoint=/ -R /mnt \
+      -O xattr=sa -O mountpoint=/ -R /mnt -f \
       rpool /dev/disk/by-id/${DRIVE_ID}-part1
 
 # 3.1 Create a filesystem dataset to act as a container:
