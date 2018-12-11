@@ -127,7 +127,7 @@ network:
       dhcp4: true
 EOF
 
-vi /mnt/etc/netplan/${ETHERNET}.yaml
+cat /mnt/etc/netplan/${ETHERNET}.yaml
 
 # 4.3  Configure the package sources:
 sed -i 's/^/# /' /mnt/etc/apt/sources.list
